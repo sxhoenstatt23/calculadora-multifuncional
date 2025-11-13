@@ -1,0 +1,199 @@
+Algoritmo CalculadoraCompleta
+    Definir opcion, opcion_geometria, opcion_estadistica, n, i, terminos, num_inicial, a, b, c, temp Como Entero
+    Definir radio, lado, base, altura, base_mayor, base_menor, area, diametro, suma, moda, mediana Como Real
+    Definir continuar Como Logico
+    Definir numeros Como Cadena
+    Definir arreglo_numeros Como Real
+    Dimension arreglo_numeros[100]
+    
+    continuar <- Verdadero
+    
+    Mientras continuar Hacer
+        Escribir "=========================================="
+        Escribir "         CALCULADORA COMPLETA"
+        Escribir "=========================================="
+        Escribir "1. Operaciones básicas"
+        Escribir "2. Cálculos geométricos"
+        Escribir "3. Estadística (moda, media, mediana)"
+        Escribir "4. Sucesión de Fibonacci"
+        Escribir "5. Salir"
+        Escribir "=========================================="
+        Escribir "Seleccione una opción: "
+        Leer opcion
+        
+        Segun opcion Hacer
+            1:
+                Escribir "=== OPERACIONES BÁSICAS ==="
+                Escribir "Ingrese el primer número: "
+                Leer a
+                Escribir "Ingrese el segundo número: "
+                Leer b
+                Escribir "Suma: ", a + b
+                Escribir "Resta: ", a - b
+                Escribir "Multiplicación: ", a * b
+                Si b <> 0 Entonces
+                    Escribir "División: ", a / b
+                Sino
+                    Escribir "División: No se puede dividir por cero"
+                FinSi
+                
+            2:
+                Escribir "=== CÁLCULOS GEOMÉTRICOS ==="
+                Escribir "1. Círculo"
+                Escribir "2. Cuadrado"
+                Escribir "3. Triángulo"
+                Escribir "4. Trapecio"
+                Escribir "Seleccione una figura: "
+                Leer opcion_geometria
+                
+                Segun opcion_geometria Hacer
+                    1:
+                        Escribir "=== CÍRCULO ==="
+                        Escribir "Ingrese el radio: "
+                        Leer radio
+                        area <- 3.1416 * radio * radio
+                        diametro <- 2 * radio
+                        Escribir "Área: ", area
+                        Escribir "Diámetro: ", diametro
+                        Escribir "Radio: ", radio
+                    2:
+                        Escribir "=== CUADRADO ==="
+                        Escribir "Ingrese el lado: "
+                        Leer lado
+                        area <- lado * lado
+                        Escribir "Área: ", area
+                        Escribir "Perímetro: ", 4 * lado
+                    3:
+                        Escribir "=== TRIÁNGULO ==="
+                        Escribir "Ingrese la base: "
+                        Leer base
+                        Escribir "Ingrese la altura: "
+                        Leer altura
+                        area <- (base * altura) / 2
+                        Escribir "Área: ", area
+                    4:
+                        Escribir "=== TRAPECIO ==="
+                        Escribir "Ingrese la base mayor: "
+                        Leer base_mayor
+                        Escribir "Ingrese la base menor: "
+                        Leer base_menor
+                        Escribir "Ingrese la altura: "
+                        Leer altura
+                        area <- ((base_mayor + base_menor) * altura) / 2
+                        Escribir "Área: ", area
+                    De Otro Modo:
+                        Escribir "Opción no válida"
+                FinSegun
+                
+            3:
+                Escribir "=== ESTADÍSTICA ==="
+                Escribir "¿Cuántos números desea ingresar? (máximo 100): "
+                Leer n
+                
+                Si n > 0 Y n <= 100 Entonces
+                    // Leer los números
+                    Para i <- 1 Hasta n Hacer
+                        Escribir "Ingrese el número ", i, ": "
+                        Leer arreglo_numeros[i]
+                    FinPara
+                    
+                    // Calcular media
+                    suma <- 0
+                    Para i <- 1 Hasta n Hacer
+                        suma <- suma + arreglo_numeros[i]
+                    FinPara
+                    Escribir "Media: ", suma / n
+                    
+                    // Calcular mediana
+                    // Primero ordenar el arreglo
+                    Para i <- 1 Hasta n-1 Hacer
+                        Para j <- i+1 Hasta n Hacer
+                            Si arreglo_numeros[i] > arreglo_numeros[j] Entonces
+                                temp <- arreglo_numeros[i]
+                                arreglo_numeros[i] <- arreglo_numeros[j]
+                                arreglo_numeros[j] <- temp
+                            FinSi
+                        FinPara
+                    FinPara
+                    
+                    Si n % 2 = 0 Entonces
+                        // Cantidad par de elementos
+                        mediana <- (arreglo_numeros[n/2] + arreglo_numeros[n/2 + 1]) / 2
+                    Sino
+                        // Cantidad impar de elementos
+                        mediana <- arreglo_numeros[(n + 1) / 2]
+                    FinSi
+                    Escribir "Mediana: ", mediana
+                    
+                    // Calcular moda (versión simplificada)
+                    Escribir "Moda: (Cálculo básico - número que más se repite)"
+                    Definir max_repeticiones, repeticiones, moda_valor Como Entero
+                    max_repeticiones <- 0
+                    moda_valor <- arreglo_numeros[1]
+                    
+                    Para i <- 1 Hasta n Hacer
+                        repeticiones <- 0
+                        Para j <- 1 Hasta n Hacer
+                            Si arreglo_numeros[i] = arreglo_numeros[j] Entonces
+                                repeticiones <- repeticiones + 1
+                            FinSi
+                        FinPara
+                        
+                        Si repeticiones > max_repeticiones Entonces
+                            max_repeticiones <- repeticiones
+                            moda_valor <- arreglo_numeros[i]
+                        FinSi
+                    FinPara
+                    
+                    Escribir "La moda es: ", moda_valor, " (se repite ", max_repeticiones, " veces)"
+                    
+                Sino
+                    Escribir "Cantidad de números no válida"
+                FinSi
+                
+            4:
+                Escribir "=== SUCESIÓN DE FIBONACCI ==="
+                Escribir "Ingrese el número inicial: "
+                Leer num_inicial
+                Escribir "¿Cuántos términos desea generar? "
+                Leer terminos
+                
+                Si terminos <= 0 Entonces
+                    Escribir "El número de términos debe ser mayor a 0"
+                Sino
+                    Escribir "Sucesión de Fibonacci:"
+                    
+                    Si terminos >= 1 Entonces
+                        Escribir "Término 1: ", num_inicial
+                    FinSi
+                    
+                    Si terminos >= 2 Entonces
+                        a <- num_inicial
+                        b <- num_inicial
+                        Escribir "Término 2: ", b
+                    FinSi
+                    
+                    Para i <- 3 Hasta terminos Hacer
+                        c <- a + b
+                        Escribir "Término ", i, ": ", c
+                        a <- b
+                        b <- c
+                    FinPara
+                FinSi
+                
+            5:
+                Escribir "¡Hasta luego!"
+                continuar <- Falso
+                
+            De Otro Modo:
+                Escribir "Opción no válida. Intente nuevamente."
+        FinSegun
+        
+        Si opcion <> 5 Entonces
+            Escribir ""
+            Escribir "Presione cualquier tecla para continuar..."
+            Esperar Tecla
+        FinSi
+    FinMientras
+    
+FinAlgoritmo
