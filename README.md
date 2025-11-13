@@ -147,11 +147,16 @@ Implementamos una **arquitectura modular** con las siguientes características t
 
 #### Ejemplo 1: Operación Básica (División)
 ```
-Menú Principal → 1 (Operaciones Básicas)
-Submenu → 4 (División)
-Primer número: 100
-Segundo número: 4
-Resultado: 100 ÷ 4 = 25
+ === OPERACIONES BÁSICAS ===
+Ingrese el primer número: 
+5
+Ingrese el segundo número: 
+4
+Suma: 9
+Resta: 1
+Multiplicación: 20
+División: 1.25
+
 ```
 
 #### Ejemplo 2: Cálculo Geométrico (Círculo)
@@ -160,9 +165,9 @@ Menú Principal → 2 (Cálculos Geométricos)
 Submenu → 1 (Círculo)
 Radio: 5
 Resultados:
-  - Radio: 5 unidades
-  - Diámetro: 10 unidades
-  - Área: 78.5398 unidades²
+  - Área: 78.5
+  - Diámetro: 10
+  - Radio: 5
 ```
 
 #### Ejemplo 3: Estadística
@@ -182,11 +187,13 @@ Menú Principal → 4 (Sucesión de Fibonacci)
 Número inicial: 5
 Términos a generar: 7
 Resultados:
-  ADVERTENCIA: 5 no pertenece a Fibonacci
-  Se comenzará desde: 8
-  Término 1: 8
-  Término 2: 13
-  Término 3: 21
+  Término 1: 5
+  Término 2: 5
+  Término 3: 10
+  Término 4: 15
+  Término 5: 25
+  Término 6: 40
+  Término 7: 6
   ...
 ```
 
@@ -335,15 +342,11 @@ F(n) = F(n-1) + F(n-2)  para n ≥ 2
 ```
 
 **Características Especiales**:
-- ✅ Solo muestra números que pertenecen a la sucesión REAL
-- ✅ Valida si el número inicial está en Fibonacci
-- ✅ Si no está, advierte y comienza desde el siguiente número válido
 - ✅ No inventa números: sigue la lógica matemática estricta
 
 **Validaciones**:
 - ✅ Número inicial ≥ 0
 - ✅ Cantidad de términos entre 1-50
-- ✅ Advertencia si número no pertenece a Fibonacci
 
 ---
 
@@ -573,26 +576,28 @@ Las contribuciones son bienvenidas. Para contribuir:
 
 ## 👥 Autores
 
-**[Tu Nombre / Equipo]**
-- GitHub: [@tuusuario](https://github.com/tuusuario)
-- Email: tuemail@example.com
+**-Loredo Villanueva Paola Jocelyn**
+**-Olalde Campos Schoenstatt**
+**-Olvera Hernandez Maria Guadalupe**
+**-Perez Mendoza Roxana**
+- GitHub: [@tuusuario](https://github.com/sxhoenstatt23)
+- Email: 024000641@upsrj.edu.mx
 
-**Proyecto**: Optativa de Programación
-**Institución**: [Tu Institución]
-**Fecha**: Noviembre 2025
+**Proyecto**: Optativa 1
+**Institución**: Universidad Politécnica de Santa Rosa Jauregui
+**Fecha**: 13 Noviembre 2025
 
 ---
 
 ## 📄 Licencia
 
-Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+Este proyecto está bajo la Licencia MIT
 
 ---
 
 ## 🙏 Agradecimientos
 
 - A PSeInt por proporcionar una herramienta educativa excelente
-- A nuestros profesores por la guía durante el desarrollo
 - A la comunidad de GitHub por las mejores prácticas
 
 ---
@@ -600,10 +605,8 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) par
 ## 📞 Soporte
 
 Si encuentras algún bug o tienes sugerencias:
-
-1. Revisa los [Issues existentes](https://github.com/tuusuario/calculadora-pseint/issues)
-2. Crea un nuevo Issue si es necesario
-3. Describe el problema con el mayor detalle posible
+1. Crea un nuevo Issue si es necesario
+2. Describe el problema con el mayor detalle posible
 
 ---
 
