@@ -1,0 +1,76 @@
+# Historial de Cambios
+
+Todos los cambios notables de este proyecto serán documentados en este archivo.
+
+El formato está basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/).
+
+## [1.0.0] - 2025-11-13
+
+### ✨ Agregado
+- Módulo de operaciones básicas (suma, resta, multiplicación, división)
+- Módulo de cálculos geométricos para 4 figuras
+  - Círculo: área, radio y diámetro
+  - Cuadrado: área y perímetro
+  - Triángulo: área
+  - Trapecio: área
+- Módulo de estadística básica
+  - Cálculo de media aritmética
+  - Cálculo de mediana
+  - Cálculo de moda con detección de valores únicos
+- Generador de sucesión de Fibonacci
+  - Validación matemática de números de Fibonacci
+  - Advertencia para números no pertenecientes a la sucesión
+  - Generación configurable de términos (1-50)
+- Sistema de menús con navegación intuitiva
+- Interfaz visual con formato ASCII
+- Documentación completa en README.md
+
+### 🛡️ Seguridad
+- Validación de división por cero
+- Validación de rangos en entradas numéricas
+- Protección contra valores negativos en geometría
+- Límites en cantidad de datos estadísticos (2-100)
+- Manejo de errores en todas las operaciones
+
+### 🐛 Correcciones
+- Corregido cálculo de moda para conjuntos sin valores repetidos
+- Mejorada precisión de π (pi) a 11 decimales
+- Optimizado algoritmo de ordenamiento burbuja
+
+### 📝 Documentación
+- README.md completo con guía de uso
+- Documentación de arquitectura del código
+- Explicación de dificultades encontradas
+- Ejemplos de uso para cada módulo
+- Comentarios inline en todo el código
+
+---
+
+## [0.2.0] - 2025-11-10
+
+### ✨ Agregado
+- Módulo de estadística básica
+- Algoritmo de ordenamiento burbuja
+
+### 🐛 Correcciones
+- Validación mejorada en operaciones básicas
+
+---
+
+## [0.1.0] - 2025-11-08
+
+### ✨ Agregado
+- Estructura base del proyecto
+- Menú principal
+- Módulo de operaciones básicas
+- Módulo de cálculos geométricos
+
+---
+
+**Leyenda:**
+- ✨ Agregado: Nuevas funcionalidades
+- 🔧 Cambiado: Cambios en funcionalidades existentes
+- 🗑️ Eliminado: Funcionalidades removidas
+- 🐛 Correcciones: Bugs corregidos
+- 🛡️ Seguridad: Vulnerabilidades corregidas
+- 📝 Documentación: Cambios en documentación
