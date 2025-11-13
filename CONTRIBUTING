@@ -1,0 +1,314 @@
+# Guía de Contribución
+
+¡Gracias por tu interés en contribuir a la Calculadora Multifuncional! 🎉
+
+## 📋 Tabla de Contenidos
+
+- [Código de Conducta](#código-de-conducta)
+- [¿Cómo puedo contribuir?](#cómo-puedo-contribuir)
+- [Guía de Estilo](#guía-de-estilo)
+- [Proceso de Pull Request](#proceso-de-pull-request)
+
+---
+
+## 📜 Código de Conducta
+
+Este proyecto y todos los participantes se rigen por un código de conducta. Al participar, se espera que respetes este código:
+
+- Sé respetuoso y considerado
+- Usa lenguaje inclusivo
+- Acepta críticas constructivas
+- Enfócate en lo que es mejor para la comunidad
+- Muestra empatía hacia otros miembros
+
+---
+
+## 🤝 ¿Cómo puedo contribuir?
+
+### Reportar Bugs
+
+Si encuentras un bug, por favor crea un Issue con:
+
+- **Título descriptivo** que identifique el problema
+- **Descripción detallada** del bug
+- **Pasos para reproducir** el error
+- **Comportamiento esperado** vs **comportamiento actual**
+- **Capturas de pantalla** si aplica
+- **Versión de PSeInt** que estás usando
+
+**Ejemplo:**
+```
+Título: División por cero no muestra error en módulo X
+
+Descripción: Al intentar dividir 10/0 en el módulo de operaciones 
+básicas, el programa no muestra mensaje de error.
+
+Pasos:
+1. Ejecutar calculadora
+2. Seleccionar opción 1 (Operaciones Básicas)
+3. Seleccionar opción 4 (División)
+4. Ingresar 10 como numerador
+5. Ingresar 0 como denominador
+
+Resultado esperado: Mensaje "ERROR: No se puede dividir entre cero"
+Resultado actual: El programa se cierra inesperadamente
+```
+
+### Sugerir Mejoras
+
+¿Tienes una idea para mejorar el proyecto? Crea un Issue con:
+
+- Descripción clara de la mejora
+- Por qué sería útil
+- Ejemplos de uso si aplica
+
+### Contribuir con Código
+
+1. **Fork** el repositorio
+2. **Crea una rama** para tu feature
+3. **Haz commits** descriptivos
+4. **Prueba** tu código exhaustivamente
+5. **Envía un Pull Request**
+
+---
+
+## 📐 Guía de Estilo
+
+### Convenciones de Nomenclatura
+
+**Variables:**
+```pseint
+// ✅ Correcto - camelCase descriptivo
+Definir numeroUsuario, resultadoFinal Como Real
+Definir opcionMenu Como Entero
+
+// ❌ Incorrecto - nombres poco descriptivos
+Definir x, y, z Como Real
+Definir n Como Entero
+```
+
+**Subprocesos:**
+```pseint
+// ✅ Correcto - PascalCase descriptivo
+SubProceso CalcularAreaCirculo()
+SubProceso MostrarMenuPrincipal()
+
+// ❌ Incorrecto
+SubProceso calc()
+SubProceso menu()
+```
+
+### Comentarios
+
+**Comentarios de Bloque:**
+```pseint
+// ========================================================
+// MÓDULO: OPERACIONES BÁSICAS
+// Descripción: Realiza operaciones aritméticas fundamentales
+// Autor: [Tu nombre]
+// Fecha: 2025-11-13
+// ========================================================
+```
+
+**Comentarios Inline:**
+```pseint
+// Validar que el divisor no sea cero
+Si divisor = 0 Entonces
+    Escribir "ERROR: División por cero"
+FinSi
+```
+
+### Formato de Código
+
+**Indentación:**
+- Usar **tabulación** o **4 espacios** consistentemente
+- Indentar dentro de estructuras de control
+
+```pseint
+// ✅ Correcto
+Si condicion Entonces
+    instruccion1
+    instruccion2
+FinSi
+
+// ❌ Incorrecto
+Si condicion Entonces
+instruccion1
+instruccion2
+FinSi
+```
+
+**Espaciado:**
+```pseint
+// ✅ Correcto
+resultado <- numero1 + numero2
+Si x > 0 Y x < 100 Entonces
+
+// ❌ Incorrecto
+resultado<-numero1+numero2
+Si x>0 Y x<100Entonces
+```
+
+### Validaciones Obligatorias
+
+Todo input de usuario debe ser validado:
+
+```pseint
+// ✅ Siempre validar entradas
+Repetir
+    Escribir "Ingrese un número positivo: "
+    Leer numero
+    Si numero <= 0 Entonces
+        Escribir "ERROR: El número debe ser positivo"
+    FinSi
+Hasta Que numero > 0
+
+// ❌ No asumir datos correctos
+Escribir "Ingrese un número: "
+Leer numero
+resultado <- CalcularAlgo(numero)
+```
+
+### Manejo de Errores
+
+Siempre proporcionar feedback claro:
+
+```pseint
+// ✅ Mensajes descriptivos
+Si divisor = 0 Entonces
+    Escribir "ERROR: No se puede dividir entre cero"
+    Escribir "Por favor, ingrese un divisor diferente de cero"
+FinSi
+
+// ❌ Mensajes genéricos
+Si divisor = 0 Entonces
+    Escribir "Error"
+FinSi
+```
+
+---
+
+## 🔄 Proceso de Pull Request
+
+### 1. Preparar tu Contribución
+
+```bash
+# Actualizar tu fork
+git checkout main
+git pull upstream main
+
+# Crear rama para tu feature
+git checkout -b feature/nueva-funcionalidad
+```
+
+### 2. Hacer Cambios
+
+- Escribe código limpio y comentado
+- Sigue la guía de estilo
+- Prueba exhaustivamente
+- Actualiza documentación si es necesario
+
+### 3. Commit
+
+Usa mensajes descriptivos siguiendo este formato:
+
+```bash
+# Formato: tipo(alcance): descripción
+
+# Tipos:
+# feat: Nueva funcionalidad
+# fix: Corrección de bug
+# docs: Cambios en documentación
+# style: Formato, sin cambios de código
+# refactor: Refactorización de código
+# test: Agregar tests
+# chore: Tareas de mantenimiento
+
+# Ejemplos:
+git commit -m "feat(geometria): Agregar cálculo de pentágono"
+git commit -m "fix(estadistica): Corregir cálculo de moda"
+git commit -m "docs(readme): Actualizar guía de instalación"
+```
+
+### 4. Push y Pull Request
+
+```bash
+# Subir cambios
+git push origin feature/nueva-funcionalidad
+```
+
+En GitHub:
+1. Ve a tu fork
+2. Clic en "Compare & pull request"
+3. Completa el template:
+
+```markdown
+## Descripción
+[Describe tus cambios]
+
+## Tipo de cambio
+- [ ] Bug fix
+- [ ] Nueva funcionalidad
+- [ ] Cambio importante (breaking change)
+- [ ] Documentación
+
+## ¿Cómo ha sido probado?
+[Describe las pruebas realizadas]
+
+## Checklist
+- [ ] Mi código sigue la guía de estilo
+- [ ] He comentado mi código
+- [ ] He actualizado la documentación
+- [ ] Mis cambios no generan warnings
+- [ ] He probado en PSeInt
+```
+
+### 5. Revisión
+
+- Responde a comentarios del review
+- Haz cambios solicitados
+- Sé paciente y respetuoso
+
+---
+
+## ✅ Checklist de Contribución
+
+Antes de enviar tu Pull Request, verifica:
+
+- [ ] Código funciona correctamente en PSeInt
+- [ ] Código sigue la guía de estilo
+- [ ] Comentarios claros y descriptivos
+- [ ] Validaciones de entrada implementadas
+- [ ] Manejo de errores apropiado
+- [ ] Mensajes de error descriptivos
+- [ ] Documentación actualizada
+- [ ] CHANGELOG.md actualizado
+- [ ] Tests realizados manualmente
+- [ ] Sin archivos innecesarios (.psc~, .bak)
+
+---
+
+## 🎓 Recursos Útiles
+
+- [Documentación de PSeInt](http://pseint.sourceforge.net/)
+- [Guía de Markdown](https://www.markdownguide.org/)
+- [Conventional Commits](https://www.conventionalcommits.org/)
+- [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/)
+
+---
+
+## 💬 Preguntas
+
+¿Tienes preguntas? No dudes en:
+- Abrir un Issue con la etiqueta `question`
+- Contactar al equipo en [tu-email@ejemplo.com]
+
+---
+
+## 🙏 Agradecimientos
+
+¡Gracias por contribuir a hacer este proyecto mejor! Cada contribución, sin importar su tamaño, es valiosa.
+
+---
+
+*Happy Coding! 💻✨*
