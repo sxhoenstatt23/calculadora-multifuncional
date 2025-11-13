@@ -1,0 +1,27 @@
+# Archivos de PSeInt
+*.psc~
+*.bak
+*.tmp
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Carpetas de IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Archivos temporales
+*.log
+*.cache
+
+# Archivos de Windows
+ehthumbs.db
+
+# Archivos de Mac
+.AppleDouble
+.LSOverride
